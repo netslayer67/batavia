@@ -238,7 +238,7 @@ const TestimonialSection = () => {
                       src={`/logos/${file}`}
                       alt={`Partner ${file.replace('.png', '')}`}
                       onError={(e) => (e.currentTarget.style.display = 'none')}
-                      className="h-full w-auto object-contain grayscale hover:grayscale-0 transition duration-500"
+                      className="h-full w-auto object-contain grayscale hover:grayscale-0 transition duration-500 rounded"
                       loading="lazy"
                     />
                   </div>

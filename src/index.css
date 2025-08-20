@@ -131,3 +131,10 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #2563eb;
 }
+
+::selection {
+  background-color: #13863d;
+  /* hijau Tailwind green-500 */
+  color: rgb(255, 255, 255);
+  /* biar teks tetap terbaca */
+}

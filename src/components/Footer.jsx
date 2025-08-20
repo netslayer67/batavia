@@ -124,7 +124,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-green-500 flex-shrink-0" />
-                <span>info@bataviasaranasinergi.com</span>
+                <span>office@bataviasaranasinergi.com</span>
               </li>
               <li className="flex gap-4 mt-4">
                 <a href="#" aria-label="Instagram" className="w-10 h-10 flex items-center justify-center rounded-full bg-green-500/10 hover:bg-green-500/20 transition">

@@ -268,7 +268,7 @@ const ServicesSection = () => {
             </div>
             <div className="flex lg:justify-end">
               <button
-                className="w-full lg:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#c6904c] to-[#e6c67a] text-black font-semibold shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-[1.02] active:scale-[0.99]"
+                className="w-full lg:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#4cc656] to-[#83e67a] text-black font-semibold shadow-lg hover:shadow-xl transition-transform duration-300 hover:scale-[1.02] active:scale-[0.99]"
               >
                 Konsultasi Sekarang
               </button>

@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom'; // 👈 pakai Link
 import logo from './ui/batavia.png';
 
 const navItems = [
-    { label: 'Beranda', href: 'hero' },
+    { label: 'Beranda', href: '/' }, // ke landing page
     {
         label: 'Tentang Kami',
         dropdown: [
-            { label: 'Profile', href: 'profile' },
-            { label: 'Visi & Misi', href: 'visi-misi' },
-            { label: 'Nilai - Nilai Perusahaan', href: 'nilai' },
+            { label: 'Profile', href: '/profile' },
+            { label: 'Visi & Misi', href: '/visi-misi' },
+            { label: 'Nilai - Nilai Perusahaan', href: '/nilai' },
         ],
     },
     {
         label: 'Layanan',
         dropdown: [
-            { label: 'Semua Moda Transportasi Pengiriman', href: 'semua-moda' },
-            { label: 'Pesawat Carter', href: 'pesawat-carter' },
-            { label: 'Kargo Proyek', href: 'kargo-proyek' },
-            { label: 'Pergudangan', href: 'pergudangan' },
+            { label: 'Semua Moda Transportasi Pengiriman', href: '/semua-moda' },
+            { label: 'Pesawat Carter', href: '/pesawat-carter' },
+            { label: 'Kargo Proyek', href: '/kargo-proyek' },
+            { label: 'Pergudangan', href: '/pergudangan' },
         ],
     },
-    { label: 'Galeri', href: 'galeri' },
-    { label: 'Kontak', href: 'kontak' },
+    { label: 'Galeri', href: '/galeri' },
+    { label: 'Kontak', href: '/kontak' },
 ];
 
 const glass =
@@ -64,20 +65,20 @@ const Navbar = () => {
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }}>
-                        <a href="#hero" className="flex items-center gap-3 cursor-pointer">
-                            <img
-                                src={logo}
-                                alt="Batavia Logo"
-                                className="h-10 w-auto object-contain"
-                            />
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <Link to="/" className="flex items-center gap-3 cursor-pointer">
+                            <img src={logo} alt="Batavia Logo" className="h-10 w-auto object-contain" />
                             <span className="text-xl font-serif tracking-tight text-white">
                                 <span className="font-bold">Batavia</span>
                                 <span className="ml-1 bg-gradient-to-br from-[#c6904c] to-[#d4af37] bg-clip-text text-transparent">
                                     Sarana
                                 </span>
                             </span>
-                        </a>
+                        </Link>
                     </motion.div>
 
                     {/* Desktop Navigation */}
@@ -104,12 +105,12 @@ const Navbar = () => {
                                                 >
                                                     {item.dropdown.map((sub, i) => (
                                                         <li key={i} className="relative">
-                                                            <a
-                                                                href={`#${sub.href}`}
+                                                            <Link
+                                                                to={sub.href}
                                                                 className="block px-5 py-3 text-sm text-white/80 hover:bg-white/10 hover:text-white transition-colors"
                                                             >
                                                                 {sub.label}
-                                                            </a>
+                                                            </Link>
                                                             {shimmer}
                                                         </li>
                                                     ))}
@@ -118,12 +119,12 @@ const Navbar = () => {
                                         </AnimatePresence>
                                     </>
                                 ) : (
-                                    <a
-                                        href={`#${item.href}`}
+                                    <Link
+                                        to={item.href}
                                         className="text-sm font-medium text-white/80 hover:text-white transition-colors"
                                     >
                                         {item.label}
-                                    </a>
+                                    </Link>
                                 )}
                             </li>
                         ))}
@@ -132,8 +133,8 @@ const Navbar = () => {
                     {/* CTA & Mobile Toggle */}
                     <div className="flex items-center gap-4">
                         <motion.a
-                            href="#kontak"
-                            className={`hidden md:inline-flex items-center rounded-full px-6 h-11 font-semibold text-sm text-white bg-gradient-to-r from-[#c6904c] to-[#d4af37] transition-transform hover:scale-105 active:scale-95`}
+                            href="/kontak"
+                            className="hidden md:inline-flex items-center rounded-full px-6 h-11 font-semibold text-sm text-white bg-gradient-to-r from-[#c6904c] to-[#d4af37] transition-transform hover:scale-105 active:scale-95"
                             initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6 }}
@@ -183,13 +184,13 @@ const Navbar = () => {
                                                     >
                                                         {item.dropdown.map((sub, i) => (
                                                             <li key={i}>
-                                                                <a
-                                                                    href={`#${sub.href}`}
+                                                                <Link
+                                                                    to={sub.href}
                                                                     className="block px-4 py-2 text-sm text-white/70 hover:text-white"
                                                                     onClick={() => setMobileOpen(false)}
                                                                 >
                                                                     {sub.label}
-                                                                </a>
+                                                                </Link>
                                                             </li>
                                                         ))}
                                                     </motion.ul>
@@ -197,24 +198,24 @@ const Navbar = () => {
                                             </AnimatePresence>
                                         </>
                                     ) : (
-                                        <a
-                                            href={`#${item.href}`}
+                                        <Link
+                                            to={item.href}
                                             className="block px-4 py-3 text-lg text-white/80 hover:text-white"
                                             onClick={() => setMobileOpen(false)}
                                         >
                                             {item.label}
-                                        </a>
+                                        </Link>
                                     )}
                                 </li>
                             ))}
                             <li className="pt-4">
-                                <a
-                                    href="#kontak"
+                                <Link
+                                    to="/kontak"
                                     className="block w-full text-center rounded-full bg-gradient-to-r from-[#c6904c] to-[#d4af37] px-6 py-3 text-white font-semibold"
                                     onClick={() => setMobileOpen(false)}
                                 >
                                     Konsultasi Gratis
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </motion.div>
