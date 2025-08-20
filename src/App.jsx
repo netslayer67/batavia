@@ -15,13 +15,55 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>PT BATAVIA SARANA SINERGI INDONESIA - Solusi Transportasi Terpercaya</title>
-        <meta name="description" content="Tingkatkan engagement dan reach dengan layanan pembuatan konten media sosial profesional dan website interaktif dari Benerun Pro. Konsultasi gratis tersedia!" />
-        <meta name="keywords" content="konten media sosial, website interaktif, video editing, copywriting, social media marketing, digital marketing" />
-        <meta property="og:title" content="BENERUN PROJECT - Konten Media Sosial & Website Interaktif Terbaik" />
-        <meta property="og:description" content="Tingkatkan engagement dan reach dengan layanan pembuatan konten media sosial profesional dan website interaktif dari Benerun Pro." />
+        {/* Title SEO-friendly */}
+        <title>
+          PT Batavia Sarana Sinergi Indonesia | Solusi Logistik & Transportasi Terpercaya
+        </title>
+
+        {/* Meta Description */}
+        <meta
+          name="description"
+          content="PT Batavia Sarana Sinergi Indonesia menyediakan solusi perencanaan, operasional, distribusi logistik, dan layanan khusus yang efisien, aman, dan tepat waktu."
+        />
+
+        {/* Keywords */}
+        <meta
+          name="keywords"
+          content="logistik Indonesia, distribusi barang, transportasi terpercaya, perencanaan strategi, pengelolaan operasional, jasa logistik Jakarta, Batavia Sarana Sinergi"
+        />
+
+        {/* Open Graph Meta (untuk social media preview) */}
+        <meta
+          property="og:title"
+          content="PT Batavia Sarana Sinergi Indonesia - Solusi Logistik & Transportasi"
+        />
+        <meta
+          property="og:description"
+          content="Mitra strategis dalam perencanaan, operasional, distribusi, dan layanan logistik khusus. Solusi efisien & terpercaya untuk bisnis Anda."
+        />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.bataviasaranasinergi.com" />
+        <meta
+          property="og:image"
+          content="https://www.bataviasaranasinergi.com/wp-content/uploads/2025/05/cropped-LOGO-PT-BATAVIA-SARANA-SINERGI-INODENSIA-04-scaled-1-1536x862.png"
+        />
+
+        {/* Twitter Card untuk tampilan di Twitter/X */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="PT Batavia Sarana Sinergi Indonesia - Solusi Logistik & Transportasi"
+        />
+        <meta
+          name="twitter:description"
+          content="Solusi logistik, transportasi, perencanaan, dan layanan khusus yang efisien & terpercaya."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.bataviasaranasinergi.com/wp-content/uploads/2025/05/cropped-LOGO-PT-BATAVIA-SARANA-SINERGI-INODENSIA-04-scaled-1-1536x862.png"
+        />
       </Helmet>
+
 
       <div className="min-h-screen bg-gradient-to-br from-black via-green-800 to-black bg-pattern">
         <Navbar />
